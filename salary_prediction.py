@@ -103,7 +103,7 @@ match_Education(Education)
 Job_Title = st.selectbox("Enter Job Title",list)
 Gender = st.radio("Select Gender",["Male","Female"])
 Age = st.slider("Enter Age",0,100)
-Experirnce = st.slider("Enter your Experience",0,35)
+Experience = st.slider("Enter your Experience",0,35)
 
 #Model prediction
 button_clicked = st.button("Submit")
