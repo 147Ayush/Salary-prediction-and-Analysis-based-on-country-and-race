@@ -108,8 +108,11 @@ Experirnce = st.slider("Enter your Experience",0,35)
 #Model prediction
 button_clicked = st.button("Submit")
 if button_clicked:
-    result1, result2 = label_encoding(Gender, Job_Title)
-    pre = model.predict([[Age, result1, result2, Experirnce, a, b, c, d, x, y, z]])
-    st.success(f"Expected Salary in $ {pre}")
+    try:
+        result1, result2 = label_encoding(Gender, Job_Title)
+        prediction = model.predict([[Age, result1, result2, Experience, a, b, c, d, x, y, z]])
+        st.success(f"Expected Salary in $ {prediction[0]}")
+    except ValueError as e:
+        st.error(e)
 
 
