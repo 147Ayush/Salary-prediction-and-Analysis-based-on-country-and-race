@@ -110,7 +110,7 @@ button_clicked = st.button("Submit")
 if button_clicked:
     try:
         result1, result2 = label_encoding(Gender, Job_Title)
-        prediction = model.predict([[Age, result1, result2, Experience, a, b, c, d, x, y, z]])
+        prediction = abs(model.predict([[Age, result1, result2, Experience, a, b, c, d, x, y, z]]))
         st.success(f"Expected Salary in $ {prediction[0]}")
     except ValueError as e:
         st.error(e)
